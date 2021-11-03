@@ -1,0 +1,19 @@
+.home-container {
+  background-image: url("https://a0.muscache.com/im/pictures/0c38042b-8685-4180-8d9b-12a6892ac6d8.jpg");
+  height: 90vh;
+  padding: 10px 5em;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center bottom;
+    vertical-align: bottom;
+  }
+}

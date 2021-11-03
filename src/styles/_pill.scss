@@ -1,0 +1,55 @@
+@import "./variables";
+.pill-container {
+  color: $secondary-color;
+  width: 60%;
+  height: 66px;
+  margin: auto;
+  border-radius: 50px;
+  //   padding: 1px 10px;
+  @include horizontalAlign;
+  justify-content: space-between;
+  box-shadow: rgb(0 0 0 / 15%) 0px 16px 32px, rgb(0 0 0 / 10%) 0px 3px 8px;
+  background-color: rgb(247, 247, 247);
+
+  position: relative;
+  box-sizing: content-box;
+  &__pill {
+    display: grid;
+    font-weight: 600;
+    // margin-left: 20px;
+    border-right: 1px solid rgb(226, 219, 219);
+    padding: 6px 32px;
+    box-sizing: border-box;
+    height: 70%;
+
+    span {
+      font-weight: 100;
+      color: grey;
+    }
+    &:hover {
+      background-color: rgb(226, 219, 219);
+      cursor: pointer;
+      border-radius: 32px;
+      height: 100%;
+      padding: 16px 32px;
+      //   opacity: 0.5;
+    }
+  }
+  &__search {
+    // background-color: red;
+    color: $primary-color;
+    @include horizontalAlign;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgb(255, 56, 92);
+    width: fit-content;
+    border-radius: inherit;
+    height: 80%;
+    border: none;
+    margin-right: 10px;
+    &__word {
+      margin-left: 10px;
+      //   display: none;
+    }
+  }
+}

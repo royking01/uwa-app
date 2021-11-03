@@ -1,0 +1,9 @@
+@import "./styles/variables.scss";
+@font-face {
+  font-family: "circular";
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+  font-family: circular;
+}
