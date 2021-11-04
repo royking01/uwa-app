@@ -5,15 +5,26 @@ import { headerLinkService } from "../../services/headerLinkService";
 export const Pill = () => {
   let pillListItems: pill[] = [
     { title: "Location", subTitle: "Where are you going" },
+    { title: "Check in", subTitle: "Add date" },
+    { title: "Check out", subTitle: "Add date" },
+    { title: "Guest", subTitle: "Add guest" },
   ];
-  const getActiveLink = () => {
+  const [pill, setPill] = useState(pillListItems);
+  useEffect(() => {
     headerLinkService.getData().subscribe((res: any) => {
       console.log("res", res.value);
+      res.value == "Monthly stays" ? setPillList() : setPill(pillListItems);
     });
+  }, []);
+  const setPillList = () => {
+    setPill([
+      { title: "Location", subTitle: "Where are you going" },
+      { title: "Date", subTitle: "Add When you want to go" },
+    ]);
   };
   return (
     <div className="pill-container">
-      {pillListItems.map((res, id) => (
+      {pill.map((res, id) => (
         <p className="pill-container__pill" key={id}>
           {res.title}
           <span>{res.subTitle ? res.subTitle : ""}</span>
