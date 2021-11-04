@@ -1,18 +1,22 @@
 @import "./variables";
 .pill-container {
   color: $secondary-color;
-  width: 60%;
-  height: 66px;
+  width: 850px;
   margin: auto;
-  border-radius: 50px;
-  //   padding: 1px 10px;
-  @include horizontalAlign;
-  justify-content: space-between;
-  box-shadow: rgb(0 0 0 / 15%) 0px 16px 32px, rgb(0 0 0 / 10%) 0px 3px 8px;
-  background-color: rgb(247, 247, 247);
+  &__elements {
+    height: 66px;
+    margin: 0 50%;
+    margin: auto;
+    border-radius: 50px;
+    //   padding: 1px 10px;
+    @include horizontalAlign;
+    justify-content: space-between;
+    box-shadow: rgb(0 0 0 / 15%) 0px 16px 32px, rgb(0 0 0 / 10%) 0px 3px 8px;
+    background-color: rgb(247, 247, 247);
 
-  position: relative;
-  box-sizing: content-box;
+    position: relative;
+    box-sizing: content-box;
+  }
   &__pill {
     display: grid;
     font-weight: 600;
@@ -21,6 +25,8 @@
     padding: 6px 32px;
     box-sizing: border-box;
     height: 70%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     span {
       font-weight: 100;

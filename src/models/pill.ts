@@ -1,4 +1,4 @@
-export interface pill {
+export interface pillInterface {
   title: string;
   subTitle: string;
 }
