@@ -1,6 +1,21 @@
 import "../../styles/_header.scss";
+import React, { useState, useEffect } from "react";
 
 export const Header = () => {
+  let [currentLink, setLinkState] = useState(" ");
+  useEffect(() => {
+    currentLink = "Places to stay?";
+    console.log(`current link = ${currentLink}`);
+  }, []);
+  const setLink = (link: string) => {
+    // currentLink = link;
+    setLinkState(link);
+    // alert(currentLink);
+    console.log({
+      link,
+      currentLink,
+    });
+  };
   return (
     <header className="header">
       <div className="header__logo">
@@ -18,14 +33,24 @@ export const Header = () => {
       </div>
       <div className="header__links">
         <ul className="header__links__list">
-          <li className="header__links__list__item">
+          <li
+            className={`header__links__list__item ${
+              currentLink === "Places to stay?" ? "true" : " "
+            }`}
+            onClick={() => setLink("Places to stay?")}
+          >
             <a href="/#">Places to stay</a>
           </li>
-          <li className="header__links__list__item">
-            <a href="/#">Places to stay</a>
+          <li
+            className={`header__links__list__item ${
+              currentLink === "Monthly stays" ? "true" : " "
+            }`}
+            onClick={() => setLink("Monthly stays")}
+          >
+            <a href="/#">Monthly stays</a>
           </li>
           <li className="header__links__list__item">
-            <a href="/#">Places to stay</a>
+            <a href="/#">Experiences</a>
           </li>
         </ul>
       </div>

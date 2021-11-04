@@ -20,7 +20,7 @@
     &__list {
       @include horizontalAlign;
       list-style: none;
-      li {
+      &__item {
         margin: 0 15px;
         height: 20px;
         padding: 10px 0;
@@ -46,20 +46,33 @@
           width: 5px;
           margin-bottom: 0;
           visibility: hidden;
-          transform: scaleX(0) !important;
+          transform: scaleX(0);
           transition: 0.2s -ms-transform cubic-bezier(0, 0, 0.1, 1),
             0.2s -webkit-transform cubic-bezier(0, 0, 0.1, 1),
-            0.2s transform cubic-bezier(0, 0, 0.1, 1) !important;
+            0.2s transform cubic-bezier(0, 0, 0.1, 1);
         }
         &:hover::after {
           visibility: visible;
-          transform: scaleX(1) !important;
+          transform: scaleX(1);
         }
         &:hover {
           align-items: center;
           padding: 10px 0;
           opacity: 0.5;
         }
+      }
+      .true::before {
+        visibility: visible;
+        content: " ";
+        border: 2px solid $primary-color;
+        // margin: 10px;
+        width: 15px;
+        margin-bottom: -31px;
+        position: absolute;
+        opacity: 1;
+        transition: 0.2s -ms-transform cubic-bezier(0, 0, 0.1, 1),
+          0.2s -webkit-transform cubic-bezier(0, 0, 0.1, 1),
+          0.2s transform cubic-bezier(0, 0, 0.1, 1);
       }
     }
   }
@@ -73,7 +86,7 @@
       padding: 15px 30px;
     }
     p:hover {
-      background-color: rgba(255, 255, 255, 0.15) !important;
+      background-color: rgba(255, 255, 255, 0.15);
       //   padding: 5px;
       cursor: pointer;
     }
