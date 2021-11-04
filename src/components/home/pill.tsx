@@ -1,13 +1,20 @@
 import { pill } from "../../models/pill";
 import "../../styles/_pill.scss";
+import { useState, useEffect } from "react";
+import { headerLinkService } from "../../services/headerLinkService";
 export const Pill = () => {
-  const pillListItems: pill[] = [
+  let pillListItems: pill[] = [
     { title: "Location", subTitle: "Where are you going" },
   ];
+  const getActiveLink = () => {
+    headerLinkService.getData().subscribe((res: any) => {
+      console.log("res", res.value);
+    });
+  };
   return (
     <div className="pill-container">
-      {pillListItems.map((res) => (
-        <p className="pill-container__pill">
+      {pillListItems.map((res, id) => (
+        <p className="pill-container__pill" key={id}>
           {res.title}
           <span>{res.subTitle ? res.subTitle : ""}</span>
         </p>

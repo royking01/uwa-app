@@ -1,20 +1,14 @@
 import "../../styles/_header.scss";
-import React, { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
+import { headerLinkService } from "../../services/headerLinkService";
 export const Header = () => {
   let [currentLink, setLinkState] = useState(" ");
   useEffect(() => {
-    currentLink = "Places to stay?";
-    console.log(`current link = ${currentLink}`);
+    setLink("Places to stay?");
   }, []);
   const setLink = (link: string) => {
-    // currentLink = link;
     setLinkState(link);
-    // alert(currentLink);
-    console.log({
-      link,
-      currentLink,
-    });
+    headerLinkService.setData(link);
   };
   return (
     <header className="header">
@@ -80,7 +74,7 @@ export const Header = () => {
               <path d="m2 24h28"></path>
               <path d="m2 8h28"></path>
             </g>
-          </svg>{" "}
+          </svg>
           <svg
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
