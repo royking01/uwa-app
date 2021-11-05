@@ -1,7 +1,7 @@
-import { pillInterface } from "../../models/pill";
-import "../../styles/_pill.scss";
+import { pillInterface } from "../../../../models/pill";
+import "../../../../styles/home/section-1/_pill.scss";
 import { useState, useEffect } from "react";
-import { headerLinkService } from "../../services/headerLinkService";
+import { headerLinkService } from "../../../../services/headerLinkService";
 export const Pill = () => {
   const pillListItems: pillInterface[] = [
     { title: "Location", subTitle: "Where are you going" },

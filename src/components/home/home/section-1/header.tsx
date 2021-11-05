@@ -1,6 +1,6 @@
-import "../../styles/_header.scss";
+import "../../../../styles/home/section-1/_header.scss";
 import { useState, useEffect } from "react";
-import { headerLinkService } from "../../services/headerLinkService";
+import { headerLinkService } from "../../../../services/headerLinkService";
 export const Header = () => {
   let [currentLink, setLinkState] = useState(" ");
   useEffect(() => {

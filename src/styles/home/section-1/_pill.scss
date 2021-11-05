@@ -1,7 +1,7 @@
-@import "./variables";
+@import "../../variables";
 .pill-container {
   color: $secondary-color;
-  width: 850px;
+  max-width: 850px;
   margin: auto;
   &__elements {
     height: 66px;
@@ -10,7 +10,9 @@
     border-radius: 50px;
     //   padding: 1px 10px;
     @include horizontalAlign;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex: 1 1 0% !important;
+
     box-shadow: rgb(0 0 0 / 15%) 0px 16px 32px, rgb(0 0 0 / 10%) 0px 3px 8px;
     background-color: rgb(247, 247, 247);
 
@@ -20,11 +22,14 @@
   &__pill {
     display: grid;
     font-weight: 600;
+    flex: 1 0 0% !important;
+
     // margin-left: 20px;
     border-right: 1px solid rgb(226, 219, 219);
     padding: 6px 32px;
     box-sizing: border-box;
     height: 70%;
+    // background-color: gray;
     text-overflow: ellipsis;
     white-space: nowrap;
 

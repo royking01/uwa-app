@@ -1,6 +1,6 @@
-import { Header } from "./header";
-import "../../styles/_home.scss";
-import { Pill } from "./pill";
+import { Header } from "./section-1/header";
+import "../../../styles/./home/_home.scss";
+import { Pill } from "./section-1/pill";
 export const Home = () => {
   return (
     <div className="home-container">
