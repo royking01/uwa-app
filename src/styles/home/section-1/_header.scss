@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap");
 .header {
   @include horizontalAlign;
+  @include mobile {
+    display: none;
+  }
   justify-content: space-between;
   //   padding: 20px 40px;
   color: $primary-color;
@@ -10,6 +13,9 @@
     @include horizontalAlign;
     // background-color: black;
     &__name {
+      @include tablet {
+        display: none;
+      }
       margin-left: 10px;
       font-weight: 600;
       font-size: 20px;
@@ -17,6 +23,15 @@
     }
   }
   &__links {
+    @include tablet {
+      // display: none;
+      position: absolute;
+      top: 70px;
+      margin-left: 20%;
+      // margin: auto;
+      // width: 100%;
+      @include horizontalAlign;
+    }
     &__list {
       @include horizontalAlign;
       list-style: none;

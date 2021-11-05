@@ -69,6 +69,9 @@ export const Pill = () => {
             </g>
           </svg>
           <span className="pill-container__search__word">search</span>
+          <span className="pill-container__search__word--small">
+            Where are you going
+          </span>
         </button>
       </div>
     </div>

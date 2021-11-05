@@ -3,6 +3,16 @@
   color: $secondary-color;
   max-width: 850px;
   margin: auto;
+  @include tablet {
+    // display: none;
+    position: relative;
+    top: 50px;
+    margin: auto;
+  }
+  @include mobile {
+    margin-top: 20px;
+    // display: none;
+  }
   &__elements {
     height: 66px;
     margin: 0 50%;
@@ -20,6 +30,9 @@
     box-sizing: content-box;
   }
   &__pill {
+    @include mobile {
+      display: none;
+    }
     display: grid;
     font-weight: 600;
     flex: 1 0 0% !important;
@@ -48,6 +61,10 @@
   }
   &__search {
     // background-color: red;
+    @include mobile {
+      background: transparent;
+      color: red;
+    }
     color: $primary-color;
     @include horizontalAlign;
     justify-content: space-between;
@@ -60,7 +77,15 @@
     margin-right: 10px;
     &__word {
       margin-left: 10px;
-      //   display: none;
+      &--small {
+        display: none;
+        @include mobile {
+          display: block;
+          color: black !important;
+          font-size: 16px;
+          font-weight: 500 !important;
+        }
+      }
     }
   }
 }
