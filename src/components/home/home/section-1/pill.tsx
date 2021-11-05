@@ -11,6 +11,9 @@ export const Pill = () => {
   ];
   const [pillLists, setPill] = useState(pillListItems);
   useEffect(() => {
+    document
+      .querySelector(".pill-container__search__word")
+      ?.classList.add("hide");
     headerLinkService.getData().subscribe((res: any) => {
       res.value == "Monthly stays" ? setPillList() : setPill(pillListItems);
     });
@@ -21,11 +24,25 @@ export const Pill = () => {
       { title: "Date", subTitle: "Add When you want to go" },
     ]);
   };
+  const search = document.querySelector(
+    ".pill-container__search__word"
+  )?.classList;
+  const showSearch = () => {
+    search?.remove("hide");
+  };
+  function hideSearch(): void {
+    search?.add("hide");
+  }
   return (
     <div className="pill-container">
       <div className="pill-container__elements">
         {pillLists.map((res, id) => (
-          <p className="pill-container__pill" key={id}>
+          <p
+            className="pill-container__pill"
+            key={id}
+            onClick={() => showSearch()}
+            onMouseLeave={() => hideSearch()}
+          >
             {res.title}
             <span>{res.subTitle ? res.subTitle : ""}</span>
           </p>

@@ -1,14 +1,14 @@
 @use "../../styles/variables.scss" as m;
 .home-container {
   background-image: url("https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560");
-  height: 90vh;
+  height: 85vh;
   padding: 10px 5em;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   width: 100vw;
   box-sizing: border-box;
   img {

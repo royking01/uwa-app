@@ -9,7 +9,6 @@ export const Home = () => {
       <div className="call-to-action">
         <h4>Not sure where to go</h4>
         <button>
-          {" "}
           <span>i'm flexible</span>
         </button>
       </div>

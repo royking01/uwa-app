@@ -62,7 +62,7 @@
         }
       }
       .true {
-        opacity: 1 !important;
+        opacity: 1;
       }
       .true::before {
         visibility: visible;
@@ -73,9 +73,9 @@
         margin-bottom: -31px;
         position: absolute;
         opacity: 1 !important;
-        transition: 0.1s -ms-transform cubic-bezier(0, 0, 0.1, 1),
-          0.1s -webkit-transform cubic-bezier(0, 0, 0.1, 1),
-          0.1s transform cubic-bezier(0, 0, 0.1, 1);
+        transition: 0.3s -ms-transform cubic-bezier(0, 0, 0.1, 1),
+          0.3s -webkit-transform cubic-bezier(0, 0, 0.1, 1),
+          0.3s transform cubic-bezier(0, 0, 0.1, 1);
       }
     }
   }
