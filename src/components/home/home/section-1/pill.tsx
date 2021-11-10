@@ -11,10 +11,9 @@ export const Pill = () => {
     { title: "Guest", subTitle: "Add guest" },
   ];
   const [pillLists, setPill] = useState(pillListItems);
+  const [searchWord, setSearch] = useState(false);
   useEffect(() => {
-    document
-      .querySelector(".pill-container__search__word")
-      ?.classList.add("hide");
+    // setSearch(false);
     headerLinkService.getData().subscribe((res: any) => {
       res.value == "Monthly stays" ? setPillList() : setPill(pillListItems);
     });
@@ -25,14 +24,11 @@ export const Pill = () => {
       { title: "Date", subTitle: "Add When you want to go" },
     ]);
   };
-  const search = document.querySelector(
-    ".pill-container__search__word"
-  )?.classList;
   const showSearch = () => {
-    search?.remove("hide");
+    setSearch(true);
   };
   function hideSearch(): void {
-    search?.add("hide");
+    setSearch(false);
   }
   return (
     <div className="pill-container">
@@ -50,10 +46,17 @@ export const Pill = () => {
         ))}
         <button className="pill-container__search">
           <SearchIcon />
-          <span className="pill-container__search__word">search</span>
-          <span className="pill-container__search__word--small">
+          {searchWord ? (
+            <span className="pill-container__search__word">search</span>
+          ) : (
+            ""
+          )}
+          {/* <span
+            className="pill-container__search__word
+          --small"
+          >
             Where are you going
-          </span>
+          </span> */}
         </button>
       </div>
     </div>
